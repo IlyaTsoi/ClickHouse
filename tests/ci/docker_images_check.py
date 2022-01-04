@@ -78,7 +78,7 @@ def get_changed_docker_images(
             )
             changed_images.append(dependent)
         index += 1
-        if index > len(images_dict):
+        if index > 5 * len(images_dict):
             # Sanity check to prevent infinite loop.
             raise RuntimeError(
                 f"Too many changed docker images, this is a bug. {changed_images}"
